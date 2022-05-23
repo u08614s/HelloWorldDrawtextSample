@@ -68,11 +68,14 @@ ori r12,r12,0x52A0
 mtctr r12
 bctrl
 
+# 文字を増やす場合はここから複製する
+
 #----------------------------#
 #	文字を保管する
 #----------------------------#
 
 bl swprintf_1
+# HelloWorld
 .long 0x00A70066
 .long 0x00480065
 .long 0x006C006C
@@ -92,7 +95,7 @@ mtctr r12
 bctrl
 
 #----------------------------#
-#	
+#   描画スタート
 #----------------------------#
 
 lis r12,0x30E
@@ -100,7 +103,7 @@ ori r12,r12,0x4B3C
 mtctr r12
 bctrl
 
-lis r12,0x40A0 # おおきさ
+lis r12,0x40A0 # 大きさ
 stw r12,0x20(r2)
 lfs f1,0x20(r2)
 lfs f2,0x20(r2)
@@ -110,10 +113,10 @@ mtctr r12
 bctrl
 # scale
 
-lis r12,0x41A0 # よこ
+lis r12,0x41A0 # 横
 stw r12,0x20(r2)
 lfs f1,0x20(r2)
-lis r12,0x41A0 # たて
+lis r12,0x41A0 # 縦
 stw r12,0x20(r2)
 lfs f2,0x20(r2)
 lis r12,0x30E
@@ -148,6 +151,8 @@ ori r12,r12,0x4BD8
 mtctr r12
 bctrl
 # popMatrix(void)
+
+# 文字を増やす場合はここまで複製する
 
 #----------------------------#
 #	スタックロード

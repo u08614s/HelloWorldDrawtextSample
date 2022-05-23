@@ -92,7 +92,7 @@ mtctr r12
 bctrl
 
 #----------------------------#
-#	最初だけいるもの
+#	
 #----------------------------#
 
 lis r12,0x30E
@@ -100,7 +100,7 @@ ori r12,r12,0x4B3C
 mtctr r12
 bctrl
 
-lis r12,0x40A0
+lis r12,0x40A0 # おおきさ
 stw r12,0x20(r2)
 lfs f1,0x20(r2)
 lfs f2,0x20(r2)
@@ -108,10 +108,13 @@ lis r12,0x30E
 ori r12,r12,0x4B6C
 mtctr r12
 bctrl
+# scale
 
-lis r12,0x41A0
+lis r12,0x41A0 # よこ
 stw r12,0x20(r2)
 lfs f1,0x20(r2)
+lis r12,0x41A0 # たて
+stw r12,0x20(r2)
 lfs f2,0x20(r2)
 lis r12,0x30E
 ori r12,r12,0x4B54

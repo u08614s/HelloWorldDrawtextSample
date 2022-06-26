@@ -3,5 +3,5 @@ This program draws "HelloWorld!" to WiiU screen
 (for minecraft wiiu)
 
 # How to build
-execute the build.py
-when, do debug, use debug.py
+When build, execute build.py  
+When debug, execute debug.py
